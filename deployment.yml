@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pfe-front-deployment
+  namespace: pfe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pfe-front
+  template:
+    metadata:
+      labels:
+        app: pfe-front
+    spec:
+      containers:
+        - name: pfe-front
+          image: imagestream:pfe-front  # Use the image from the ImageStream
+          ports:
+            - containerPort: 3000       # Exposing port 3000 from the container

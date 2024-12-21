@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pfe-front-service
+  namespace: pfe
+spec:
+  ports:
+    - port: 3000               # Expose port 3000 on the service
+      targetPort: 3000          # Route traffic to port 3000 in the container
+      protocol: TCP
+  selector:
+    app: pfe-front             # Match the pods created by the Deployment using the label 'app: pfe-front'

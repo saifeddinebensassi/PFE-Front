@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: pfe-front-route
+  namespace: pfe
+spec:
+  to:
+    kind: Service
+    name: pfe-front-service  # Pointing to the service we created
+  port:
+    targetPort: 3000         # The port the service is exposing
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
