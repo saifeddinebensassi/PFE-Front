@@ -9,6 +9,9 @@ spec:
     git:
       uri: https://github.com/saifeddinebensassi/PFE-Front.git
       ref: main
+      contextDir: /
+      sourceSecret:
+        name: gitcredential
   strategy:
     type: Docker
     dockerStrategy:
