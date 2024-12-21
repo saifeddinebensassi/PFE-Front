@@ -1,22 +1,17 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: buildconfig
+  name: my-docker-build
   namespace: pfe
 spec:
   source:
     type: Git
     git:
       uri: https://github.com/saifeddinebensassi/PFE-Front.git
-      ref: main
-      contextDir: /
-      sourceSecret:
-        name: gitcredential
   strategy:
     type: Docker
-    dockerStrategy:
-      dockerfilePath: Dockerfile # Default is 'Dockerfile' in the root of the repo
   output:
     to:
       kind: ImageStreamTag
-      name: imagestream:pfe-front
+      name: imagestream:latest
+

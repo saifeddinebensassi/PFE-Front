@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: pfe-front
-          image: imagestream:pfe-front  # Use the image from the ImageStream
+          image: imagestream:latest  # Use the image from the ImageStream
           ports:
             - containerPort: 3000       # Exposing port 3000 from the container
