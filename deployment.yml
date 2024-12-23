@@ -19,4 +19,4 @@ spec:
           ports:
             - containerPort: 3000  # Exposing port 3000
       imagePullSecrets:
-        - name: registry-auth  # Reference to the pull secret created in Jenkins pipeline
+        - name: "{{PULL_SECRET}}"  # Reference to the pull secret created in Jenkins pipeline
