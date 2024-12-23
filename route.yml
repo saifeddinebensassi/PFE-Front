@@ -1,12 +1,12 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: pfe-front-route
+  name: pfe-front
   namespace: pfe
 spec:
   to:
     kind: Service
-    name: pfe-front-service  # Pointing to the service we created
+    name: pfe-front-services  # Pointing to the service we created
   port:
     targetPort: 3000         # The port the service is exposing
   tls:
