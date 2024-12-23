@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pfe-front
-          image: default-route-openshift-image-registry.apps-crc.testing/pfe/pfe-front:latest
+          image: "{{IMAGE_TAG}}"
           ports:
             - containerPort: 3000  # Exposing port 3000
       imagePullSecrets:
